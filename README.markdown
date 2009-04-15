@@ -63,6 +63,23 @@ Now, in your application, in place where you need to output a file, you must con
 
 Easy! For more information look into application.rb and config.ru files! Have fun!
 
+Using this example
+------------------
+
+First clone repository from Github:
+
+    $ git clone git://github.com/hubertlepicki/sinatra-flv-streaming-example.git sinatra_flv_streaming_example
+    $ cd sinatra_flv_streaming_example
+
+Now, get dependencies and some Rack-compatible server (I'll use Thin).
+
+    $ gem install rack rack-contrib thin
+
+Start the server and visit demo page:
+
+    $ thin -C config.yml -p 4567 start
+
+Demo page is located on [http://localhost:4567/index.html](http://localhost:4567/index.html). Please note that port 4567 is hardcoded in index.html file so you must use it or change index.html file.
 
 Notes
 -----
@@ -70,5 +87,7 @@ Notes
 This is just an example how to use it, you shouldn't use this code in production but develop your own solution based on this ideas.
 
 You must not use Rack modules like mine responseassembler that iterates on response object and process it to one string - this way you'll end up with loading all video file to memory at once.
+
+Demonstration on how to set up Flowplayer to use pseudostreaming is in file index.html.
 
 Flowplayer binaries distributed with this source code are licensed under GPLv3, and you should read their licensing policy before using it on your site [read more](http://flowplayer.org).
