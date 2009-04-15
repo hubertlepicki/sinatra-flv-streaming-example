@@ -1,0 +1,9 @@
+---
+    environment: production
+    address: 127.0.0.1
+    port: 4567
+    rackup: config.ru
+    max_conns: 1024
+    timeout: 30
+    max_persistent_conns: 512
+    daemonize: false
